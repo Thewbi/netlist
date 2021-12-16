@@ -1,0 +1,1 @@
+let deviceCardService = new DeviceCardService();

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GEZE Tool</title>
+
+    <script src="../js/devicecard.js"></script>
+    <script src="../js/devicecardservice.js"></script>
+
+    <!--
+    <script src="../js/dculight.js"></script>
+    <script src="../js/tz320.js"></script>
+    -->
+
+    <!--
+    <script src="../js/global.js"></script>
+
+    <script src="../js/can.js"></script>
+    <script src="../../node_modules/jquery-ui-dist/external/jquery/jquery.js"></script>
+	  <script src="../../node_modules/jquery-ui-dist/jquery-ui.js"></script>
+    -->
+
+
+<!--
+    <link rel="stylesheet" href="../css/font-opensans.css" />
+    <link rel="stylesheet" href="../css/sidenav.css" />
+    -->
+<!--
+    <style>
+
+        *{
+            font-family: 'Roboto', 'Arial';
+            font-weight: bold;
+            font-style: normal;
+            font-size: 20px;
+        }
+
+        body, html {
+  height: 100vh;
+}
+
+        body {
+            background-color: blue;
+            margin: 0;
+        }
+
+    </style>
+  -->
+  <style>
+
+html, body
+{
+    height: 100%;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+}
+
+#canvas
+{
+  width: 100%;
+  height: 100%;
+  background: #111;
+}
+  </style>
+</head>
+<body style="height: 100%">
+
+  <!--
+  <canvas id="canvas" class="canvas">
+  </canvas>-->
+
+  <!--
+  <div style="height:100vh; width: 100%; overflow: scroll; background-color: gainsboro;">
+    <canvas width="512px" height="512px" style="background-color: white;"></canvas>
+</div>-->
+
+<canvas id="canvas"></canvas>
+
+
+  <!--
+    <div class="sidenav">
+        <a href="#about">
+            <img src="../../node_modules/@primer/octicons/build/svg/mail-16.svg"></img>
+        </a>
+        <a href="#about">
+            <img src="../../node_modules/@primer/octicons/build/svg/mail-16.svg"></img>
+        </a>
+        <a href="#about">
+            <img src="../../node_modules/@primer/octicons/build/svg/mail-16.svg"></img>
+        </a>
+        <a href="#about">
+            <img src="../../node_modules/@primer/octicons/build/svg/mail-16.svg"></img>
+        </a>
+    </div>
+
+    <div class="main">
+
+    <button onclick="addDevice()">Add Device</button>
+
+    <div id="main_div">
+    </div>
+
+    <template id="deviceCardTemplate">
+        <div id="outer_div" style="border:2px solid rgb(157, 153, 165); width:250px; height:100px; background-color: darkgrey;">
+
+            <div id="info">
+                UNKNOWN TYPE
+            </div>
+
+            <div id="command_button_section" style="display:none;">
+
+                <button id="btn-lock" onclick="alert('template onclick()');" style="width:50px; height:50px; background-color:blue;">
+                    <img src="file:///C:/Users/U5353/temp/lock.svg">
+                </button>
+
+                <button id="btn-unlock" onclick="alert('template onclick()');" style="width:50px; height:50px; background-color:white;">
+                    <img src="file:///C:/Users/U5353/temp/unlock.svg"></img>
+                </button>
+
+                <button id="btn-three" onclick="alert('template onclick()');" style="width:50px; height:50px; background-color:white;">
+                    <img src="file:///C:/Users/U5353/temp/Zeichnung.svg"></img>
+                </button>
+
+            </div>
+
+            <div id="offline_section" style="display:visible;">
+                OFFLINE!
+            </div>
+        </div>
+    </template>
+    -->
+
+</div>
+
+</body>
+
+<!--
+<script src="../js/render.js"></script>
+-->
+
+<script src="../js/render2.js"></script>
+
+</html>
