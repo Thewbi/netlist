@@ -1,0 +1,66 @@
+//import { Observable } from 'rxjs'; // yields: cannot use import outside a module
+
+// npm install rxjs
+// npm install rxjs-compat
+const Rx = require("rxjs/Rx");
+const repeat = require("rxjs/operator/repeat");
+
+class Wire {
+  constructor(id) {
+    this.id = id;
+
+    this.subscription = null;
+
+    //this.valueObservable$ = Rx.Observable.interval(1000);
+    this.valueObservable$ = new Rx.Subject();
+  }
+
+  setValue(value) {
+    this.valueObservable$.next(value);
+  }
+
+  sub(rhs) {
+    // subscribe and store the subscription for unsubscribe
+    this.subscription = rhs.valueObservable$.subscribe(
+      this.next.bind(this),
+      this.error.bind(this),
+      this.complete.bind(this)
+    );
+
+    return this.subscription;
+  }
+
+  unsub() {
+    if (this.subscription != null) {
+      //console.log("%s unsubscribing!", this.id);
+      this.subscription.unsubscribe();
+      this.subscription = null;
+    }
+  }
+
+  closeObservable() {
+    if (this.valueObservable$) {
+      this.valueObservable$.complete();
+    }
+  }
+
+  next(x) {
+    console.log("%s says: got value %d!", this.id, x);
+    this.setValue(x);
+  }
+
+  error(err) {
+    console.error("%s says: something wrong occurred: %s", this.id, err);
+  }
+
+  /**
+   * REMEMBER: This method is only called when the observer is subscribed to the observable
+   * at the time complete() is called on the observable! If the observer has unsubscribed
+   * from the observable before complete() is called, this method is never called!
+   */
+  complete() {
+    //console.log("%s says: complete", this.id);
+    this.valueObservable$.complete();
+    this.subscription.unsubscribe();
+  }
+}

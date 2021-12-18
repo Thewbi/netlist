@@ -177,6 +177,9 @@ function onPointerUp(e)
 
 function onPointerMove(e)
 {
+    if (!getEventLocation(e)) {
+      return;
+    }
     let x = getEventLocation(e).x;
     let y = getEventLocation(e).y;
 
